@@ -23,7 +23,7 @@ public class MarkAndCompact extends MarkAndSweep {
 			while (newHeap.size() > 0) {
 				Entry<Integer, Node> object = newHeap.poll();
 				int size = object.getValue().getEnd() - object.getValue().getStart();
-				writer.write(object.getKey() + "," + nextMemoryAddress + "," + nextMemoryAddress + size + "\r\n");
+				writer.write(object.getKey() + "," + nextMemoryAddress + "," + (nextMemoryAddress + size) + "\r\n");
 				nextMemoryAddress += size + 1;
 			}
 			writer.close();
